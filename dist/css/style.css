@@ -1,0 +1,264 @@
+/**
+ * andikabahari.github.io
+ * Copyright (c) 2019.
+ */
+
+* {
+  box-sizing: border-box;
+}
+
+*::after {
+  display: block;
+  content: "";
+  clear: both;
+}
+
+html,
+body {
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13pt;
+  color: #333;
+  line-height: 1.2;
+}
+
+a,
+a:visited {
+  color: #0072c6;
+  text-decoration: none;
+}
+
+a:hover,
+a:active {
+  color: #00467a;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+}
+
+p {
+  font-weight: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0px 0px 15px 0px;
+}
+
+.app {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+.sidebar,
+.main {
+  float: left;
+  min-height: 100%;
+}
+
+.sidebar {
+  background: #fff;
+  width: 360px;
+}
+
+.sidebar .frame {
+  width: auto;
+  padding: 60px 60px 0px 60px;
+  overflow: hidden;
+}
+
+.sidebar .frame .avatar {
+  width: 100%;
+  height: auto;
+}
+
+.sidebar .sections,
+.sidebar .downloads,
+.sidebar .attribution {
+  width: auto;
+  padding: 30px 30px 0px 30px;
+}
+
+.sidebar .sections .btns .btn,
+.sidebar .downloads .btns .btn {
+  border-radius: 6px;
+  padding: 8px 14px;
+  margin: 5px;
+  float: left;
+  -webkit-box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.25);
+}
+
+.sidebar .sections .btns .btn {
+  width: calc(50% - 10px);
+}
+
+.sidebar .downloads .btns .btn {
+  width: 100%;
+}
+
+.main {
+  width: calc(100% - 360px);
+  background: #f4f4f4;
+  padding: 70px;
+}
+
+.main .fill {
+  background: #fff;
+  border-radius: 8px;
+  padding: 25px;
+  margin-bottom: 25px;
+  -webkit-box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.25);
+  display: none;
+  animation: fade 1s;
+}
+
+.main .fill.active {
+  display: block;
+}
+
+.main .fill .timeline {
+  background: #333;
+  position: relative;
+  width: auto;
+  padding: 25px;
+  margin-top: 30px;
+  border-radius: 8px;
+}
+
+.main .fill .timeline::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  background-color: white;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+.main .fill .container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+.main .fill .container::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: white;
+  border: 4px solid #ff9f55;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.main .fill .left {
+  left: 0;
+}
+
+.main .fill .right {
+  left: 50%;
+}
+
+.main .fill .left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+.main .fill .right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+.main .fill .right::after {
+  left: -16px;
+}
+
+.main .fill .content {
+  padding: 20px 30px;
+  background-color: white;
+  position: relative;
+  border-radius: 6px;
+}
+
+@media screen and (max-width: 600px) {
+  .main .fill .timeline::after {
+    left: 31px;
+  }
+
+  .main .fill .container {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+  .main .fill .container::before {
+    left: 60px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+
+  .main .fill .left::after,
+  .main .fill .right::after {
+    left: 15px;
+  }
+
+  .main .fill .right {
+    left: 0%;
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
